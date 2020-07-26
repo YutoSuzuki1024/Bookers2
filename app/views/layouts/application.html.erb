@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookers2</title>
+    <title>Bookers</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,29 @@
   </head>
 
   <body>
+    <header>
+      <h1>Bookers</h1>
+      <nav>
+        <ul>
+          <% if user_signed_in? %>
+          <%= link_to "Home", root_path %>
+          <%= link_to "Users", users_index_path %>
+          <%= link_to "Books", books_path %>
+          <%= link_to "logout", root_path %>
+          <% else %>
+          <%= link_to "Home", root_path %>
+          <%= link_to "About", home_about_path %>
+          <%= link_to "sign up", new_user_registration_path %>
+          <%= link_to "login", new_user_session_path %>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
+
     <%= yield %>
+
+    <footer>
+      <p>CopyRight Infratop.inc</p>
+    </footer>
   </body>
 </html>

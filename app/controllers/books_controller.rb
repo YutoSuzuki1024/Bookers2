@@ -3,7 +3,6 @@ class BooksController < ApplicationController
 	end
 
 	def new
-		
 	end
 
 	def create
@@ -29,6 +28,4 @@ class BooksController < ApplicationController
 	def destroy
 		
 	end
-
 end
-
