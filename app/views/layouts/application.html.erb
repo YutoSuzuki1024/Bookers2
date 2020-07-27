@@ -15,10 +15,10 @@
       <nav>
         <ul>
           <% if user_signed_in? %>
-          <%= link_to "Home", root_path %>
-          <%= link_to "Users", users_index_path %>
+          <%= link_to "Home", user_path(current_user.id) %>
+          <%= link_to "Users", users_path %>
           <%= link_to "Books", books_path %>
-          <%= link_to "logout", root_path %>
+          <%= link_to "logout", destroy_user_session_path, method: :delete %>
           <% else %>
           <%= link_to "Home", root_path %>
           <%= link_to "About", home_about_path %>
