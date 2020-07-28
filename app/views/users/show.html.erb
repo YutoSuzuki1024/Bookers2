@@ -1,5 +1,6 @@
 <div class="sidebar">
 	<h2>User info</h2>
+
 	<table>
 		<tr><th><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></th><th></th>
 		</tr>
@@ -10,9 +11,20 @@
 			<td>introduction</td><td><%= @user.introduction %></td>
 		</tr>
 	</table>
-	
 
+	<%= link_to "btn", edit_user_path(@user.id) %>
+
+	<h2>New book</h2>
+	<%= form_for (@book) do |f| %>
+		<p>Title</p>
+		<%= f.text_field :title %>
+		<p>Opinion</p>
+		<%= f.text_area :body %>
+		<%= f.submit "Create Book" %>
+	<% end %>
+	
 </div>
+
 <main>
 	<h2>Books</h2>
 	<table>
