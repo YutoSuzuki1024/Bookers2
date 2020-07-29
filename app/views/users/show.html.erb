@@ -11,8 +11,10 @@
 			<td>introduction</td><td><%= @user.introduction %></td>
 		</tr>
 	</table>
-
-	<%= link_to "btn", edit_user_path(@user.id) %>
+	
+	<% if @user.id == current_user.id %>
+		<p><%= link_to "btn", edit_user_path(@user.id) %></p>
+	<% end %>
 
 	<h2>New book</h2>
 	<%= form_for (@book) do |f| %>
