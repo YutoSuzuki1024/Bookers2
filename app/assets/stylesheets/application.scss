@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ .navbar-header {
+ 	color: white;
+ }
+
+ footer {
+ 	text-align: right;
+ }
