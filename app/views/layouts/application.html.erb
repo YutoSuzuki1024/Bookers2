@@ -72,17 +72,29 @@
       </nav>
     </header>
 
-    <% if notice %>
-      <p class="alert alert-notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-error"><%= alert %></p>
-    <% end %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <% if notice %>
+            <span class="alert alert-notice text-success"><%= notice %></span>
+          <% end %>
+        </div>
+        <div class="col-lg-9"></div>
+      </div>
+    </div>
 
     <%= yield %>
 
-    <footer>
-      <p>CopyRight Infratop.inc</p>
-    </footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9"></div>
+        <footer class="col-lg-2">
+          <p>CopyRight Infratop.inc</p>
+        </footer>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+
   </body>
 </html>
